@@ -50,29 +50,45 @@ This project includes two example folders for data:
 
 
 ## 🚀 How to Run
-1. Clone the repo:
-git clone https://github.com/Reneessense/wearable-shoulder-estimation.git
-cd wearable-shoulder-estimation
 
-2. Install dependencies:
-pip install -r requirements.txt
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/Reneessense/wearable-shoulder-estimation.git
+   cd wearable-shoulder-estimation
+   ```
 
-3. Run the demo pipeline:
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Step 1: Read and align raw sensor + mocap data
-  python src/01_generate_training_data.py
+3. **Run the demo pipeline:**
 
-Step 2: Split long sequences into motion segments
-  python src/02_split_motion.py
+   - **Step 1:** Read and align raw sensor + mocap data  
+     ```bash
+     python src/01_generate_training_data.py
+     ```
 
-Step 3: (Optional) Reorganize or merge segments
-  python src/03_merge_motion.py
+   - **Step 2:** Split long sequences into motion segments  
+     ```bash
+     python src/02_split_motion.py
+     ```
 
-Step 4: Train the multi-head LSTM model
-  python src/04_multihead_lstm_train.py
+   - **Step 3 (Optional):** Reorganize or merge segments  
+     ```bash
+     python src/03_merge_motion.py
+     ```
 
-Step 5: Load model and predict
-  python src/05_predict.py
+   - **Step 4:** Train the multi-head LSTM model  
+     ```bash
+     python src/04_multihead_lstm_train.py
+     ```
+
+   - **Step 5:** Load model and predict  
+     ```bash
+     python src/05_predict.py
+     ```
+
 
 
 ## 📈 Model
