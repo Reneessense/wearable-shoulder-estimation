@@ -58,20 +58,21 @@ cd wearable-shoulder-estimation
 pip install -r requirements.txt
 
 3. Run the demo pipeline:
+
 Step 1: Read and align raw sensor + mocap data
-python src/01_generate_training_data.py
+  python src/01_generate_training_data.py
 
 Step 2: Split long sequences into motion segments
-python src/02_split_motion.py
+  python src/02_split_motion.py
 
 Step 3: (Optional) Reorganize or merge segments
-python src/03_merge_motion.py
+  python src/03_merge_motion.py
 
 Step 4: Train the multi-head LSTM model
-python src/04_multihead_lstm_train.py
+  python src/04_multihead_lstm_train.py
 
 Step 5: Load model and predict
-python src/05_predict.py
+  python src/05_predict.py
 
 
 ## 📈 Model
