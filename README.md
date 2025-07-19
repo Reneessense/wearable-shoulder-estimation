@@ -9,26 +9,29 @@ It includes sensor data reading, preprocessing, synchronization with optical mot
 
 ## 🗂️ Project Structure
 
-├── src/                      # Python scripts for data reading, preprocessing, training
+```
+├── src/                       # Python scripts for data reading, preprocessing, training
 │   ├── 01_generate_training_data.py     # Read + align sensor and mocap data
 │   ├── 02_split_motion.py               # Split long sequence into motion clips
 │   ├── 03_merge_motion.py               # Merge or reorganize data segments
 │   ├── 04_multihead_lstm_train.py       # Multi-head LSTM training
 │   ├── 05_predict.py                    # Load model and predict
-│   ├── read_6sensor_data.py / read_16sensor_data.py
-│   ├── read_opticla.py                 # Optical mocap CSV reader
-│   ├── angle_cal.py                    # Calculate joint angles from markers
-│   ├── predict_utils.py                # Batched inference helper
-│   └── get_intersection_data.py        # Align timestamps of two modalities
+│   ├── read_6sensor_data.py / read_16sensor_data.py  # Sensor data readers
+│   ├── read_opticla.py                  # Optical mocap CSV reader
+│   ├── angle_cal.py                     # Calculate joint angles from markers
+│   ├── predict_utils.py                 # Batched inference helper
+│   └── get_intersection_data.py         # Align timestamps of two modalities
 │
 ├── data/                     # Raw and processed data
-│   ├── 20250310_data/                # Merged data after alignment, ready for training
-│   └── motion_0407/                  # Motion clips (abduction, flexion, etc.)
+│   ├── 20250310_data/        # Merged data after alignment, ready for training
+│   └── motion_0407/          # Motion clips (abduction, flexion, etc.)
 │
 ├── model/                    # Trained model checkpoints
 ├── README.md                 # This file
 ├── requirements.txt          # Python dependencies
-├── LICENSE                   # License file (e.g. MIT)
+└── LICENSE                   # License file (e.g. MIT)
+```
+
 
 
 ## 📁 Data Explanation
