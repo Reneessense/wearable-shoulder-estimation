@@ -9,27 +9,26 @@ It includes sensor data reading, preprocessing, synchronization with optical mot
 
 ## 🗂️ Project Structure
 
-├── src/ # Python scripts for data reading, preprocessing, training
-│ ├── 01_generate_training_data.py # Read + align sensor and mocap data
-│ ├── 02_split_motion.py # Split long sequence into motion clips
-│ ├── 03_merge_motion.py # Merge or reorganize data segments
-│ ├── 04_multihead_lstm_train.py # Multi-head LSTM training
-│ ├── 05_predict.py # Load model and predict
-│ ├── read_6sensor_data.py / read_16sensor_data.py
-│ ├── read_opticla.py # Optical mocap CSV reader
-│ ├── angle_cal.py # Calculate joint angles from markers
-│ ├── predict_utils.py # Batched inference helper
-│ └── get_intersection_data.py # Align timestamps of two modalities
+├── src/                      # Python scripts for data reading, preprocessing, training
+│   ├── 01_generate_training_data.py     # Read + align sensor and mocap data
+│   ├── 02_split_motion.py               # Split long sequence into motion clips
+│   ├── 03_merge_motion.py               # Merge or reorganize data segments
+│   ├── 04_multihead_lstm_train.py       # Multi-head LSTM training
+│   ├── 05_predict.py                    # Load model and predict
+│   ├── read_6sensor_data.py / read_16sensor_data.py
+│   ├── read_opticla.py                 # Optical mocap CSV reader
+│   ├── angle_cal.py                    # Calculate joint angles from markers
+│   ├── predict_utils.py                # Batched inference helper
+│   └── get_intersection_data.py        # Align timestamps of two modalities
 │
-├── data/ # Raw and processed data
-│ ├── 20250310_data/ # Merged data after alignment, ready for training
-│ └── motion_0407/ # Motion clips (abduction, flexion, etc.)
+├── data/                     # Raw and processed data
+│   ├── 20250310_data/                # Merged data after alignment, ready for training
+│   └── motion_0407/                  # Motion clips (abduction, flexion, etc.)
 │
-├── model/ # Trained model checkpoints
-│
-├── README.md # This file
-├── requirements.txt# Python dependencies
-├── LICENSE # License file (e.g. MIT)
+├── model/                    # Trained model checkpoints
+├── README.md                 # This file
+├── requirements.txt          # Python dependencies
+├── LICENSE                   # License file (e.g. MIT)
 
 
 ## 📁 Data Explanation
@@ -52,19 +51,28 @@ This project includes two example folders for data:
 
 ## 🚀 How to Run
 1. Clone the repo:
-git clone https://github.com/YourUsername/wearable-shoulder-estimation.git
+git clone https://github.com/Reneessense/wearable-shoulder-estimation.git
 cd wearable-shoulder-estimation
 
 2. Install dependencies:
 pip install -r requirements.txt
-[text](<../../../evaluation0807 (2)/evaluation0807/batch_data_process_pxy.py>)
 
 3. Run the demo pipeline:
+# Step 1: Read and align raw sensor + mocap data
 python src/01_generate_training_data.py
+
+# Step 2: Split long sequences into motion segments
 python src/02_split_motion.py
+
+# Step 3: (Optional) Reorganize or merge segments
 python src/03_merge_motion.py
+
+# Step 4: Train the multi-head LSTM model
 python src/04_multihead_lstm_train.py
+
+# Step 5: Load model and predict
 python src/05_predict.py
+
 
 ## 📈 Model
 
